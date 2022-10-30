@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Ajax Table</title>
+    <title>Data Table</title>
     <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
     <style>
       body {
@@ -18,11 +18,10 @@
     <script>
       new gridjs.Grid({
         columns: [
-          { id: 'name', name: 'Name' },
-          { id: 'age', name: 'Age' },
-          { id: 'address', name: 'Address', sort: false },
-          { id: 'phone', name: 'Phone Number', sort: false },
-          { id: 'email', name: 'Email' },
+          { id: 'label', label: 'Label' },
+          { id: 'image_cat_1', label: 'Image_cat_1', sort: false },
+          { id: 'image_cat_2', label: 'image_cat_2', sort: false },
+          { id: 'value', label: 'value' },
         ],
         server: {
           url: '/api/data',
