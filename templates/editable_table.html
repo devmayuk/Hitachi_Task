@@ -33,12 +33,10 @@
 
       new gridjs.Grid({
         columns: [
-          { id: 'id', 'hidden': true },
-          { id: 'name', name: 'Name', 'attributes': editableCellAttributes },
-          { id: 'age', name: 'Age' },
-          { id: 'address', name: 'Address', sort: false, 'attributes': editableCellAttributes },
-          { id: 'phone', name: 'Phone Number', sort: false },
-          { id: 'email', name: 'Email' },
+          { id: 'label', label: 'Label' },
+          { id: 'image_cat_1', label: 'Image_cat_1', sort: false },
+          { id: 'image_cat_2', label: 'image_cat_2', sort: false },
+          { id: 'value', label: 'value' }
         ],
         server: {
           url: '/api/data',
@@ -58,7 +56,7 @@
           multiColumn: true,
           server: {
             url: (prev, columns) => {
-              const columnIds = ['id', 'name', 'age', 'address', 'phone', 'email'];
+              const columnIds = ['id', 'label', 'image_cat_1', 'image_cat_2', 'value'];
               const sort = columns.map(col => (col.direction === 1 ? '+' : '-') + columnIds[col.index]);
               return updateUrl(prev, {sort});
             },
